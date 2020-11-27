@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
  * @author josue
  */
 public class Innterfax extends javax.swing.JFrame {
+        private ArrayList seleccionados=new ArrayList<Programa>();
+        
 
     /**
      * Creates new form Innterfax
@@ -117,22 +119,25 @@ public class Innterfax extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(113, 113, 113)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(namefield_clau, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2))
+                        .addContainerGap(217, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(showsfield, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(namefield_clau, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(showsfield, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(Agregarshow, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(savebutton_lists, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(217, Short.MAX_VALUE))
+                        .addComponent(Agregarshow, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(309, 309, 309))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(218, 218, 218)
+                .addComponent(savebutton_lists, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,9 +154,9 @@ public class Innterfax extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(showsfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Agregarshow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
                 .addComponent(savebutton_lists, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addGap(81, 81, 81))
         );
 
         jTabbedPane1.addTab("Crear ClaudiList", jPanel1);
@@ -306,25 +311,25 @@ public class Innterfax extends javax.swing.JFrame {
         
     }//GEN-LAST:event_savebutton_showsMouseClicked
 
-    private void AgregarshowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarshowMouseClicked
-        
-        if(showsfield.getSelectedIndex()>=0){
-            seleccionados.add((Programa)showsfield.getSelectedItem());
-        }
-    }//GEN-LAST:event_AgregarshowMouseClicked
-
     private void savebutton_listsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_savebutton_listsMouseClicked
-        
+
         String nombre;
-         
+
         try {
             nombre=namefield_clau.getText();
             Claudilist m=new Claudilist(nombre,seleccionados);
             m.escribir();
         } catch (IOException ex) {
-            
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_savebutton_listsMouseClicked
+
+    private void AgregarshowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarshowMouseClicked
+
+        if(showsfield.getSelectedIndex()>=0){
+            seleccionados.add((Programa)showsfield.getSelectedItem());
+        }
+    }//GEN-LAST:event_AgregarshowMouseClicked
 
     /**
      * @param args the command line arguments
@@ -384,7 +389,7 @@ public class Innterfax extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> showsfield;
     private javax.swing.JComboBox<String> tipofield_shows;
     // End of variables declaration//GEN-END:variables
-    private ArrayList <Programa> seleccionados;
+ 
 
 
 }
