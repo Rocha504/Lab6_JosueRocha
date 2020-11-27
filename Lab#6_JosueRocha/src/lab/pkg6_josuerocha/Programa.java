@@ -66,7 +66,7 @@ public class Programa {
 
     @Override
     public String toString() {
-        return "Programa{" + "nombre=" + nombre + ", puntuacion=" + puntuacion + ", fecha=" + fecha + ", tipo=" + tipo + ", genero=" + genero + '}';
+        return nombre+"("+tipo+"-"+genero+")";
     }
     
     

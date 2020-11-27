@@ -52,11 +52,11 @@ public class Claudilist {
             fw = new FileWriter(archivo, false);
             bw = new BufferedWriter(fw);
             for (Programa c : programas) {
-                bw.write(c.getNombre() + "|");
-                bw.write(c.getPuntuacion() + "|");
-                bw.write(c.getFecha() + "|");
-                bw.write(c.getTipo() + "|");
-                bw.write(c.getGenero()+ "|");
+                bw.write(c.getNombre() + "/");
+                bw.write(c.getPuntuacion() + "/");
+                bw.write(c.getFecha() + "/");
+                bw.write(c.getTipo() + "/");
+                bw.write(c.getGenero()+ "/");
             }
             bw.flush();
         } catch (Exception ex) {
@@ -71,7 +71,7 @@ public class Claudilist {
         if (archivo.exists()) {
             try {
                 sc = new Scanner(archivo);
-                sc.useDelimiter("|");
+                sc.useDelimiter("/");
                 while (sc.hasNext()) {
                     programas.add(new Programa(sc.next(),
                                     sc.nextInt(),
