@@ -56,7 +56,8 @@ public class Claudilist {
                 bw.write(c.getPuntuacion() + "/");
                 bw.write(c.getFecha() + "/");
                 bw.write(c.getTipo() + "/");
-                bw.write(c.getGenero()+ "/");
+                bw.write(c.getGenero()+ "/"+"\n");
+                
             }
             bw.flush();
         } catch (Exception ex) {

@@ -79,6 +79,8 @@ public class Innterfax extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 0, 153));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Nombre de ClaudiList");
@@ -93,6 +95,7 @@ public class Innterfax extends javax.swing.JFrame {
         label1.setForeground(new java.awt.Color(51, 51, 51));
         label1.setText("(Click en el boton para agregarlo)");
 
+        savebutton_lists.setBackground(new java.awt.Color(102, 153, 255));
         savebutton_lists.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         savebutton_lists.setForeground(new java.awt.Color(51, 51, 51));
         savebutton_lists.setLabel("Crear ClaudiList");
@@ -105,7 +108,9 @@ public class Innterfax extends javax.swing.JFrame {
         showsfield.setForeground(new java.awt.Color(51, 51, 51));
         showsfield.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
+        Agregarshow.setBackground(new java.awt.Color(51, 102, 255));
         Agregarshow.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        Agregarshow.setForeground(new java.awt.Color(51, 51, 51));
         Agregarshow.setLabel("Agregar");
         Agregarshow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -161,6 +166,8 @@ public class Innterfax extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear ClaudiList", jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
+
         label2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         label2.setForeground(new java.awt.Color(51, 51, 51));
         label2.setText("Nombre del programa");
@@ -190,6 +197,7 @@ public class Innterfax extends javax.swing.JFrame {
 
         generofield_shows.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
+        savebutton_shows.setBackground(new java.awt.Color(153, 0, 153));
         savebutton_shows.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         savebutton_shows.setForeground(new java.awt.Color(51, 51, 51));
         savebutton_shows.setLabel("Guardar programa");
@@ -264,14 +272,14 @@ public class Innterfax extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
@@ -297,6 +305,9 @@ public class Innterfax extends javax.swing.JFrame {
             modelo.addElement(shows);
             showsfield.setModel(modelo);
             JOptionPane.showMessageDialog(this,"Programa agregado exitosamente");
+            namefield_shows.setText("");
+            puntuacionfield_shows.setText("");
+            fechafield_shows.setText("");
         }
         catch(Exception e){
              JOptionPane.showMessageDialog(this,"ERROR: REVISAR CONSOLA");
@@ -305,7 +316,7 @@ public class Innterfax extends javax.swing.JFrame {
              System.out.println("Asegurese de no tener ningun espacio en la puntuacion y fecha");
              System.out.println("Llene todos los campos.");
              System.out.println("Presione guardar hasta que todos los cambos esten llenos");
-            
+             System.out.println("La lista debe contener al menos un programa");
         }
             
         
@@ -319,6 +330,9 @@ public class Innterfax extends javax.swing.JFrame {
             nombre=namefield_clau.getText();
             Claudilist m=new Claudilist(nombre,seleccionados);
             m.escribir();
+            JOptionPane.showMessageDialog(this,"ClaudiList creada correctamente. \n Se ha creado un Archivo");
+            namefield_clau.setText("");
+            seleccionados.clear();
         } catch (IOException ex) {
             ex.printStackTrace();
         }
