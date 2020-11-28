@@ -1,8 +1,11 @@
  
 package lab.pkg6_josuerocha;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -89,6 +92,25 @@ public class Claudilist {
             } catch (Exception ex) {
             }
             sc.close();
+        }
+    }
+    
+    public void mostrarArchivo(String n) throws FileNotFoundException, IOException{
+        File archivo=null;
+        FileReader fr=null;
+        BufferedReader br=null;
+        try{
+            archivo=new File("./"+n+".txt");
+            fr=new FileReader (archivo);
+            br=new BufferedReader(fr);
+            String linea="";
+            while((linea=br.readLine()) != null){
+                System.out.println(linea);   
+            
+        }
+    }
+        catch(Exception e){
+            e.printStackTrace();
         }
     }
     

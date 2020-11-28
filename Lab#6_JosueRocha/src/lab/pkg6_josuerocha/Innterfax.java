@@ -92,7 +92,7 @@ public class Innterfax extends javax.swing.JFrame {
         savebutton_shows = new java.awt.Button();
         jPanel3 = new javax.swing.JPanel();
         claudilists = new javax.swing.JComboBox<>();
-        button1 = new java.awt.Button();
+        choosebutton = new java.awt.Button();
         jLabel3 = new javax.swing.JLabel();
         label7 = new java.awt.Label();
         label8 = new java.awt.Label();
@@ -301,7 +301,12 @@ public class Innterfax extends javax.swing.JFrame {
 
         claudilists.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
-        button1.setLabel("Elegir");
+        choosebutton.setLabel("Elegir");
+        choosebutton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                choosebuttonMouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
@@ -345,6 +350,7 @@ public class Innterfax extends javax.swing.JFrame {
 
         newgenderfield.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
+        modifybutton.setBackground(new java.awt.Color(204, 0, 0));
         modifybutton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         modifybutton.setLabel("Modificar");
         modifybutton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -363,7 +369,7 @@ public class Innterfax extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(claudilists, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(choosebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel3))
@@ -414,7 +420,7 @@ public class Innterfax extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(choosebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(claudilists, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(71, 71, 71)
                         .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -560,6 +566,16 @@ public class Innterfax extends javax.swing.JFrame {
         
     }//GEN-LAST:event_modifybuttonMouseClicked
 
+    private void choosebuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_choosebuttonMouseClicked
+        String archivo=(String) claudilists.getSelectedItem();
+        Claudilist ap=new Claudilist();
+            try {
+                ap.mostrarArchivo(archivo);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+    }//GEN-LAST:event_choosebuttonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -597,7 +613,7 @@ public class Innterfax extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button Agregarshow;
-    private java.awt.Button button1;
+    private java.awt.Button choosebutton;
     private javax.swing.JComboBox<String> claudilists;
     private java.awt.TextField fechafield_shows;
     private javax.swing.JComboBox<String> generofield_shows;
