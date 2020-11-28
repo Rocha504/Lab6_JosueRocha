@@ -22,6 +22,12 @@ public class Claudilist {
     public Claudilist() {
     }
 
+    public Claudilist(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
+
     public Claudilist(String nombre, ArrayList<Programa> programas) {
         this.nombre = nombre;
         this.programas = programas;
@@ -85,6 +91,21 @@ public class Claudilist {
             sc.close();
         }
     }
+    
+    public void modificarPrograma(Claudilist ap,String n,int p,int puntuacion,int fecha, String tipo, String genero) throws IOException{
+        
+        ap.cargarArchivo();
+        ap.getProgramas().get(p).setNombre(n);
+        ap.escribir();
+        ap.getProgramas().get(p).setPuntuacion(puntuacion);
+        ap.getProgramas().get(p).setFecha(fecha);
+        ap.getProgramas().get(p).setTipo(tipo);
+        ap.getProgramas().get(p).setGenero(genero);
+        ap.escribir();
+        
+    }
+    
+      
     
     
     
