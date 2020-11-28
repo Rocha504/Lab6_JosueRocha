@@ -297,6 +297,8 @@ public class Innterfax extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar Programa", jPanel2);
 
+        jPanel3.setBackground(new java.awt.Color(51, 204, 0));
+
         claudilists.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
         button1.setLabel("Elegir");
@@ -531,11 +533,12 @@ public class Innterfax extends javax.swing.JFrame {
         String nombreA;
         int puntuacion;
         int fecha;
+        int position;
         String tipo;
         String genero;
         
         
-        
+            position=Integer.parseInt(posicionfield.getText());
             nombreA=(String) claudilists.getSelectedItem();
             nombre=newnamefield.getText();
             puntuacion=Integer.parseInt(newpfield.getText());
@@ -543,9 +546,12 @@ public class Innterfax extends javax.swing.JFrame {
             genero=(String) newgenderfield.getSelectedItem();
             fecha=Integer.parseInt(newyearfield.getText());
             
-            Claudilist ap=new Claudilist(nombreA);
-            
-            
+            Claudilist ap=new Claudilist("./"+nombreA+".txt");
+            try {
+                ap.modificarPrograma(ap,nombre,position, puntuacion, fecha, tipo, genero);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
             JOptionPane.showMessageDialog(this,"Lista modificada exitosamente");
             newnamefield.setText("");
             newpfield.setText("");
