@@ -29,8 +29,6 @@ public class Claudilist {
         this.nombre = nombre;
     }
     
-    
-
     public Claudilist(String nombre, ArrayList<Programa> programas) {
         this.nombre = nombre;
         this.programas = programas;
@@ -65,7 +63,7 @@ public class Claudilist {
                 bw.write(c.getPuntuacion() + "/");
                 bw.write(c.getFecha() + "/");
                 bw.write(c.getTipo() + "/");
-                bw.write(c.getGenero()+ "/"+"\n");
+                bw.write(c.getGenero()+"\n");
                 
             }
             bw.flush();
@@ -126,7 +124,37 @@ public class Claudilist {
         ap.escribir();
         
     }
-    
+    public void escribirC() throws IOException {
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        File archivo=null;
+        try {
+            archivo=new File("./"+getNombre()+".txt");
+            fw = new FileWriter(archivo, false);
+            bw = new BufferedWriter(fw);
+           
+                bw.write("• Que inciso le toco y en qué manera cree que eso mejorara su programa.\n" +
+"• ¿Cuál es el tema en el que más debilidad siente y por qué? (únicamente son válidos\n" +
+"los temas que aparecen junto a su número de cuenta en la tabla).\n" +
+"• Explicación de como planea incluir ese tema en el que siente debilidad dentro del\n" +
+"laboratorio que se le fue asignado\n" +
+"• Un comentario hacia su instructora hablando sinceramente sobre: Que cosas le\n" +
+"gustaron y no le gustaron sobre los laboratorios que ella le asigno y que haría para\n" +
+"mejorar la calidad de los mismo (por ejemplo: aumento en lacomplejidad/dificultad,\n" +
+"reducción de extensión en los labs, etc)");
+                bw.write("1- Me toco el inciso 2 y se que mejorare el programa haciendo una interfaz mas amigable ademas de hacer que funcione tal y como lo especifica el proyecto.\n");
+                bw.write("El tema de tablas y arboles, especificamente los arboles, ya que cuentan\n con muchos metodos como Root entre otros que siento\n que son cosas que no son cuestion de creatividad si no mas bien memorizacion y no se como puede ser mas creativo con eso.");
+                bw.write("Yo planeo implentar hilos a mi programa. Por los momentos tengo la idea de poner un reloj que muestre la hora mientra se esta en el programa, aunque intentare usarlo en otras cosas.\n");
+                bw.write("Claudia sinceramente tus laboratorios estuvieron excelentes, ya que siento que el nivel de dificultad era apropiado y estabn bien explicados\n pero sobre todo, estabas pendiente si algo no se entendia y lo explicabas muy bien,\n almenos de tu parte no siento que hubiera ningun problema.");
+                
+                
+            
+            bw.flush();
+        } catch (Exception ex) {
+        }
+        bw.close();
+        fw.close();
+    }
       
     
     

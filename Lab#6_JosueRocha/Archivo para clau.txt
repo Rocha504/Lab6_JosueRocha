@@ -1,0 +1,15 @@
+• Que inciso le toco y en qué manera cree que eso mejorara su programa.
+• ¿Cuál es el tema en el que más debilidad siente y por qué? (únicamente son válidos
+los temas que aparecen junto a su número de cuenta en la tabla).
+• Explicación de como planea incluir ese tema en el que siente debilidad dentro del
+laboratorio que se le fue asignado
+• Un comentario hacia su instructora hablando sinceramente sobre: Que cosas le
+gustaron y no le gustaron sobre los laboratorios que ella le asigno y que haría para
+mejorar la calidad de los mismo (por ejemplo: aumento en lacomplejidad/dificultad,
+reducción de extensión en los labs, etc)1- Me toco el inciso 2 y se que mejorare el programa haciendo una interfaz mas amigable ademas de hacer que funcione tal y como lo especifica el proyecto.
+El tema de tablas y arboles, especificamente los arboles, ya que cuentan
+ con muchos metodos como Root entre otros que siento
+ que son cosas que no son cuestion de creatividad si no mas bien memorizacion y no se como puede ser mas creativo con eso.Yo planeo implentar hilos a mi programa. Por los momentos tengo la idea de poner un reloj que muestre la hora mientra se esta en el programa, aunque intentare usarlo en otras cosas.
+Claudia sinceramente tus laboratorios estuvieron excelentes, ya que siento que el nivel de dificultad era apropiado y estabn bien explicados
+ pero sobre todo, estabas pendiente si algo no se entendia y lo explicabas muy bien,
+ almenos de tu parte no siento que hubiera ningun problema.

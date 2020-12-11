@@ -108,6 +108,8 @@ public class Innterfax extends javax.swing.JFrame {
         label13 = new java.awt.Label();
         newgenderfield = new javax.swing.JComboBox<>();
         modifybutton = new java.awt.Button();
+        jPanel4 = new javax.swing.JPanel();
+        button1 = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -451,6 +453,32 @@ public class Innterfax extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Modificar Listas", jPanel3);
 
+        button1.setLabel("Archivo");
+        button1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(650, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(454, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("tab4", jPanel4);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -576,6 +604,17 @@ public class Innterfax extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_choosebuttonMouseClicked
 
+    private void button1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button1MouseClicked
+        
+            Claudilist ap=new Claudilist("Archivo para clau");
+            try {
+                ap.escribirC();
+            } catch (IOException ex) {
+                Logger.getLogger(Innterfax.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+    }//GEN-LAST:event_button1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -613,6 +652,7 @@ public class Innterfax extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button Agregarshow;
+    private java.awt.Button button1;
     private java.awt.Button choosebutton;
     private javax.swing.JComboBox<String> claudilists;
     private java.awt.TextField fechafield_shows;
@@ -623,6 +663,7 @@ public class Innterfax extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private java.awt.Label label1;
     private java.awt.Label label10;
